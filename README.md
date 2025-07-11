@@ -1,21 +1,64 @@
 # The Poet
 
-A modern poetry exploration application built with Angular, featuring server-side rendering (SSR), offline-first architecture, and fast search capabilities.
+A modern poetry exploration application built with Angular 19, featuring server-side rendering (SSR), offline-first architecture, and fast search capabilities.
 
 ## Features
 
 - Unified search across poems and poets
 - Server-side rendering for improved SEO and initial load
-- Responsive, modern interface with Material Design
+- Responsive, modern interface with Angular Material
 - Fast, client-side search with Lunr.js
 - Offline support with IndexedDB
 - Ranked search results with author prioritization
 - Real-time search suggestions
 - Direct poem URL sharing
 
-## Search Functionality
+## Getting Started
 
-The application uses a sophisticated multi-stage search system that combines author matching and full-text search:
+### Prerequisites
+
+- Node.js (v18 or later)
+- npm (v9 or later)
+- Angular CLI (`npm install -g @angular/cli`)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd the-poet
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Environment Setup:
+   ```bash
+   # Copy the environment template
+   cp src/environments/environment.template.ts src/environments/environment.ts
+   ```
+
+### Development Commands
+
+```bash
+# Start development server
+ng serve
+
+# Build for production
+ng build
+
+# Build and run with SSR
+npm run build:ssr
+npm run serve:ssr
+
+# Run tests
+ng test          # Unit tests
+ng e2e           # End-to-end tests
+```
+
+## Search Functionality
 
 ### Author-Focused Search
 
@@ -49,64 +92,16 @@ For general searches, the system:
 - `death emily dickinson` - Finds Emily Dickinson's poems about death
 - `love` - Finds all poems about love, ranked by author prominence and relevance
 
-### Search Rankings
-
-The system maintains a ranking of prominent poets to ensure their works appear higher in search results when relevant. Current top-ranked poets include:
-
-1. William Shakespeare
-2. Oscar Wilde
-3. Emily Dickinson
-4. Edgar Allan Poe
-5. Walt Whitman
-
-### Technical Implementation
-
-The search functionality is implemented using:
-
-- Lunr.js for full-text search capabilities
-- Custom author matching algorithm
-- Weighted multi-field search
-- Background data refresh
-- Client-side caching with IndexedDB
-- Server-side rendering support
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or later)
-- npm (v9 or later)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/the-poet.git
-   cd the-poet
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-
-4. Open your browser and navigate to `http://localhost:4200`
-
 ## Architecture
 
 The application uses a modern Angular architecture focused on performance and user experience:
 
-- Angular 17+ with standalone components
+- Angular 19 with standalone components
 - Server-side rendering (SSR) for improved initial load
 - Client-side search index using Lunr.js
 - IndexedDB for offline storage
 - Progressive data loading with background refresh
-- Material Design UI components
+- Angular Material UI components
 
 ## Project Structure
 
@@ -126,26 +121,22 @@ src/
 │   │   └── poetry-search-index/ # Lunr.js integration
 │   └── models/         # TypeScript interfaces
 ├── assets/            # Static assets and icons
+│   └── search/       # Search data files
 └── environments/      # Environment configuration
 ```
 
-## Development
+## Performance Features
 
-### Development server
+- Server-side rendering for fast initial load
+- Lazy-loaded routes
+- Preloading strategies
+- Image optimization
+- IndexedDB for local data storage
+- Optimized bundle size
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Common Issues
 
-### Build
-
-Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-### SSR Build
-
-Run `npm run build:ssr` to build the project with server-side rendering support.
-
-### Running SSR
-
-Run `npm run serve:ssr` to start the SSR server.
+See [Setup Guide](src/docs/setup.md#common-issues) for solutions to common problems.
 
 ## License
 
@@ -155,4 +146,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [PoetryDB](https://poetrydb.org/) for providing the poetry API
 - The Angular team for the excellent framework and SSR support
-- Material Design team for the UI components
+- Angular Material team for the UI components

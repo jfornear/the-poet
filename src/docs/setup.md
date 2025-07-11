@@ -45,10 +45,11 @@ ng serve
 
 ### Running with SSR (Server-Side Rendering)
 ```bash
-# Build and serve with SSR
-npm run dev:ssr
+# Build with SSR
+npm run build:ssr
 
-# The application will be available at http://localhost:4200
+# Serve with SSR
+npm run serve:ssr
 ```
 
 ## Development Commands
@@ -62,9 +63,6 @@ ng e2e
 
 # Build for production
 ng build
-
-# Build for production with SSR
-npm run build:ssr
 ```
 
 ## Project Structure
@@ -74,10 +72,18 @@ the-poet/
 ├── src/
 │   ├── app/
 │   │   ├── components/    # UI components
-│   │   ├── services/      # Data and business logic
+│   │   │   ├── poem-card/   # Individual poem display
+│   │   │   ├── poem-detail/ # Full poem view
+│   │   │   ├── poem-list/   # List of poems
+│   │   │   ├── search/      # Search interface
+│   │   │   └── search-results/ # Search results display
+│   │   ├── services/      # Core services
+│   │   │   ├── poetry-db/   # API interaction
+│   │   │   ├── poetry-search/ # Search functionality
+│   │   │   ├── poetry-storage/ # IndexedDB management
+│   │   │   └── poetry-search-index/ # Lunr.js integration
 │   │   └── models/        # TypeScript interfaces
 │   ├── assets/
-│   │   ├── icons/         # App icons
 │   │   └── search/        # Search data files
 │   └── environments/      # Environment configurations
 ```
@@ -85,19 +91,22 @@ the-poet/
 ## Key Features
 
 1. **Poetry Search**
-   - Full-text search across poems
-   - Author-based search
-   - Combined search capabilities
+   - Unified search across poems and poets
+   - Author-based search with name matching
+   - Title and content search with relevance ranking
+   - Real-time search suggestions
 
 2. **Offline Support**
-   - IndexedDB storage
-   - Service worker caching
-   - Background sync
+   - IndexedDB storage for poems and search index
+   - Offline-first architecture
+   - Background data refresh
 
 3. **Performance**
-   - Server-side rendering
-   - Progressive loading
+   - Server-side rendering for fast initial load
+   - Lazy-loaded routes
+   - Preloading strategies
    - Search index optimization
+   - Optimized bundle size
 
 ## Common Issues
 
@@ -146,8 +155,8 @@ the-poet/
 
 2. **Environment Configuration**
    - Update environment.prod.ts
-   - Configure service worker
-   - Set up proper caching
+   - Set up proper caching strategies
+   - Configure server settings
 
 ## Additional Resources
 
