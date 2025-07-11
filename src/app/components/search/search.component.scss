@@ -1,0 +1,276 @@
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-wrapper {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+
+  // Add this class when autocomplete is open
+  &.autocomplete-active {
+    ::ng-deep {
+      .mat-mdc-form-field-flex {
+        border-radius: 24px 24px 0 0 !important;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1) !important;
+      }
+    }
+  }
+}
+
+.search-field {
+  width: 100%;
+
+  ::ng-deep {
+    // Style the search icon
+    .search-icon {
+      color: rgba(0, 0, 0, 0.4) !important;
+      width: 20px !important;
+      height: 20px !important;
+      font-size: 20px !important;
+      margin-right: 0 !important;
+    }
+
+    // Style the clear icon and spinner
+    .clear-icon {
+      color: rgba(0, 0, 0, 0.4) !important;
+      width: 20px !important;
+      height: 20px !important;
+      font-size: 20px !important;
+      margin-left: 4px !important;
+    }
+
+    .clear-icon {
+      cursor: pointer !important;
+      transition: opacity 0.2s !important;
+
+      &:hover {
+        opacity: 0.8 !important;
+      }
+    }
+
+    .mat-mdc-form-field-flex {
+      border-radius: 24px !important;
+      padding: 0 8px !important;
+      background-color: white !important;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+      transition: box-shadow 0.3s ease !important;
+
+      &:hover {
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15) !important;
+      }
+    }
+
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none;
+    }
+
+    // Remove all default outlines
+    .mat-mdc-form-field-outline {
+      display: none !important;
+    }
+
+    .mdc-notched-outline {
+      display: none !important;
+    }
+
+    // Add single custom focus outline
+    .mat-mdc-form-field-focus-overlay {
+      border: 1px solid transparent;
+      border-radius: 24px;
+      transition: border-color 0.2s;
+    }
+
+    .mdc-text-field--focused .mat-mdc-form-field-focus-overlay {
+      border-color: var(--mdc-theme-primary, #6200ee);
+    }
+
+    .mat-mdc-text-field-wrapper {
+      padding: 0 !important;
+      background: transparent !important;
+    }
+
+    .mat-mdc-form-field-infix {
+      padding: 8px 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      min-height: 48px !important;
+    }
+
+    input.mat-mdc-input-element {
+      margin: 0 !important;
+      height: 24px !important;
+      font-size: 16px !important;
+      line-height: 24px !important;
+      padding-left: 0 !important;
+    }
+
+    .mat-mdc-form-field-text-prefix,
+    .mat-mdc-form-field-text-suffix {
+      align-self: center !important;
+      top: 0 !important;
+    }
+
+    .mat-mdc-icon-button {
+      width: 40px !important;
+      height: 40px !important;
+      padding: 8px !important;
+    }
+  }
+}
+
+::ng-deep {
+  .mat-mdc-autocomplete-panel {
+    margin-top: -12px !important;
+    border-radius: 0 0 24px 24px !important;
+    background-color: white !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    max-height: 70vh !important;
+    
+    // Remove default background from options
+    .mdc-list {
+      padding: 12px 0 !important;
+      background: transparent !important;
+    }
+    
+    .mat-mdc-option {
+      margin: 4px 8px !important;
+      border-radius: 12px !important;
+      min-height: 56px !important;
+      line-height: 1.2 !important;
+      padding: 8px 16px !important;
+      
+      &:first-child {
+        margin-top: 0 !important;
+      }
+      
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+      
+      &:hover:not(.loading-option):not(.error-option) {
+        background-color: rgba(0, 0, 0, 0.04) !important;
+      }
+      
+      &.mdc-list-item--selected {
+        background-color: rgba(0, 0, 0, 0.08) !important;
+      }
+
+      .mdc-list-item__primary-text {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  .loading-option {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default !important;
+    background-color: transparent !important;
+    pointer-events: none !important;
+    
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    ::ng-deep .mat-mdc-option-ripple {
+      display: none;
+    }
+
+    .centered-spinner {
+      width: 100% !important;
+      ::ng-deep {
+        circle {
+          stroke: #9e9e9e !important;
+        }
+        svg {
+          width: 24px !important;
+          height: 24px !important;
+        }
+      }
+    }
+  }
+
+  .error-option {
+    color: #f44336 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-height: 48px !important;
+    cursor: default !important;
+    
+    &:hover {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.poem-option {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.poem-title {
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.poem-author {
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.4;
+}
+
+.loading-text {
+  margin-left: 8px;
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    padding: 0 0.5rem;
+  }
+
+  .search-field {
+    ::ng-deep {
+      .mat-mdc-form-field-flex {
+        border-radius: 16px !important;
+      }
+
+      input {
+        font-size: 14px !important;
+      }
+    }
+  }
+
+  ::ng-deep {
+    .mat-mdc-autocomplete-panel {
+      border-radius: 0 0 16px 16px !important;
+    }
+    
+    .mat-mdc-option {
+      border-radius: 8px !important;
+      min-height: 48px !important;
+      padding: 8px 12px !important;
+    }
+
+    .poem-option {
+      gap: 4px;
+    }
+  }
+
+  .search-wrapper.autocomplete-active {
+    ::ng-deep {
+      .mat-mdc-form-field-flex {
+        border-radius: 16px 16px 0 0 !important;
+      }
+    }
+  }
+} 

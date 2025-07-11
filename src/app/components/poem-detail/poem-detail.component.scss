@@ -1,0 +1,99 @@
+.poem-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.search-container {
+  ::ng-deep .search-container {
+    padding-top: 0;
+  }
+}
+
+.poem-content {
+  padding: 2rem 0;
+}
+
+.poem-title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.poem-author {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0 0 2rem;
+}
+
+.poem-lines {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.87);
+  margin-bottom: 2rem;
+}
+
+.poem-line {
+  margin: 0;
+  padding: 0.25rem 0;
+  white-space: pre-wrap;
+
+  &.empty-line {
+    height: 1rem;
+  }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0;
+
+  p {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.1rem;
+    margin: 0;
+  }
+}
+
+.error-message {
+  text-align: center;
+  color: #f44336;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .poem-detail-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .poem-content {
+    padding: 0.5rem 0;
+  }
+
+  .poem-title {
+    font-size: 1.5rem;
+  }
+
+  .poem-author {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .poem-lines {
+    font-size: 1rem;
+  }
+
+  .loading-container {
+    padding: 1.5rem 0;
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+} 

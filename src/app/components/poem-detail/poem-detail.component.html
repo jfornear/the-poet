@@ -1,0 +1,25 @@
+<div class="poem-detail-container">
+  <div class="search-container">
+    <app-search [initialSearchTerm]="searchTerm" (poemSelected)="onSearchResultSelected($event)"></app-search>
+  </div>
+
+  <div class="poem-content" *ngIf="poem">
+    <h1 class="poem-title">{{ poem.title }}</h1>
+    <h2 class="poem-author">by {{ poem.author }}</h2>
+    
+    <div class="poem-lines">
+      <p *ngFor="let line of poem.lines" class="poem-line" [class.empty-line]="!line.trim()">
+        {{ line }}
+      </p>
+    </div>
+  </div>
+
+  <div class="loading-container" *ngIf="isLoadingPoem">
+    
+    <p class="loading-text"></p>
+  </div>
+
+  <div class="error-message" *ngIf="error && !isLoadingPoem && isBrowser">
+    {{ error }}
+  </div>
+</div> 

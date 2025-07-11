@@ -1,0 +1,50 @@
+<div class="search-container">
+  <!-- Search Interface -->
+  <div class="search-wrapper" [class.autocomplete-active]="isAutocompleteOpen">
+    <form [formGroup]="searchForm">
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-icon matPrefix class="search-icon">search</mat-icon>
+        <input matInput
+               formControlName="searchTerm"
+               placeholder="Search poems by title or author"
+               [matAutocomplete]="auto"
+               spellcheck="false"
+               autocomplete="off"
+               autocorrect="off"
+               autocapitalize="off">
+        <mat-icon *ngIf="!(isLoading$ | async) && searchForm.get('searchTerm')?.value"
+                  matSuffix
+                  class="clear-icon"
+                  (click)="clearSearch()">
+          close
+        </mat-icon>
+      </mat-form-field>
+    </form>
+
+    <mat-autocomplete #auto="matAutocomplete" 
+                     [displayWith]="displayFn"
+                     (opened)="onAutocompleteOpened()"
+                     (closed)="onAutocompleteClosed()"
+                     (optionSelected)="onOptionSelected($event.option.value)">
+      <mat-option *ngIf="isLoading$ | async" 
+                  class="loading-option" 
+                  [disabled]="true">
+        
+      </mat-option>
+
+      <ng-container *ngIf="!(isLoading$ | async)">
+        <mat-option *ngIf="error$ | async as error" class="error-option">
+          <mat-icon color="warn">error_outline</mat-icon>
+          <span class="error-text">{{ error }}</span>
+        </mat-option>
+
+        <mat-option *ngFor="let poem of searchResults$ | async" [value]="poem">
+          <div class="poem-option">
+            <div class="poem-title">{{ poem.title }}</div>
+            <div class="poem-author">by {{ poem.author }}</div>
+          </div>
+        </mat-option>
+      </ng-container>
+    </mat-autocomplete>
+  </div>
+</div> 

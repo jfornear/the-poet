@@ -1,0 +1,33 @@
+<div class="poem-list-container">
+  <mat-accordion *ngIf="poems.length > 0">
+    <mat-expansion-panel *ngFor="let poem of poems">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ poem.title }}
+        </mat-panel-title>
+        <mat-panel-description>
+          by {{ poem.author }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="poem-content">
+        <p *ngFor="let line of poem.lines" [class.empty-line]="!line.trim()">
+          {{ line }}
+        </p>
+      </div>
+
+      <mat-divider></mat-divider>
+      <div class="poem-footer">
+        <small>Lines: {{ poem.linecount }}</small>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <div *ngIf="poems.length === 0" class="no-results">
+    <mat-card>
+      <mat-card-content>
+        No poems found. Try adjusting your search criteria.
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div> 

@@ -1,0 +1,33 @@
+.poem-list-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.poem-content {
+  margin: 1rem 0;
+  white-space: pre-line;
+}
+
+.empty-line {
+  height: 1em;
+}
+
+.poem-footer {
+  margin-top: 1rem;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.no-results {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+@media (max-width: 600px) {
+  .poem-list-container {
+    padding: 0 0.5rem;
+  }
+  mat-panel-description {
+    display: none;
+  }
+} 

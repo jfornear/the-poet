@@ -1,0 +1,13 @@
+<div class="search-results">
+  <div *ngIf="poems.length === 0" class="no-results">
+    <mat-icon>search</mat-icon>
+    <p>Search for poems by title, author, or content</p>
+  </div>
+
+  <div class="results-grid" *ngIf="poems.length > 0">
+    <app-poem-card 
+      *ngFor="let poem of poems; trackBy: trackByTitle" 
+      [poem]="poem">
+    </app-poem-card>
+  </div>
+</div>
