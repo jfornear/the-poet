@@ -2,9 +2,9 @@
   <mat-card-header>
     <mat-card-title>{{ poem.title }}</mat-card-title>
     <mat-card-subtitle>
-      <div class="author">{{ poem.author }}</div>
+      <div class="author">by {{ poem.author }}</div>
       <div *ngIf="relevanceScore" class="relevance" [class]="relevanceClass">
-        <mat-icon>trending_up</mat-icon>
+        <mat-icon class="material-symbols-rounded">trending_up</mat-icon>
         {{ relevancePercentage }}% match
       </div>
     </mat-card-subtitle>
@@ -19,6 +19,7 @@
       </div>
       
       <button *ngIf="hasMoreLines" mat-button color="primary" (click)="toggleFullPoem()">
+        <mat-icon class="material-symbols-rounded">{{ showFullPoem ? 'expand_less' : 'expand_more' }}</mat-icon>
         {{ showFullPoem ? 'Show Less' : 'Show More' }}
       </button>
     </div>
@@ -27,7 +28,7 @@
 
     <div class="poem-info">
       <span class="line-count">
-        <mat-icon>format_list_numbered</mat-icon>
+        <mat-icon class="material-symbols-rounded">format_list_numbered</mat-icon>
         {{ poem.linecount }} lines
       </span>
     </div>
@@ -35,11 +36,11 @@
 
   <mat-card-actions align="end">
     <button mat-button color="primary">
-      <mat-icon>share</mat-icon>
+      <mat-icon class="material-symbols-rounded">share</mat-icon>
       Share
     </button>
     <button mat-button color="accent">
-      <mat-icon>bookmark</mat-icon>
+      <mat-icon class="material-symbols-rounded">bookmark</mat-icon>
       Save
     </button>
   </mat-card-actions>

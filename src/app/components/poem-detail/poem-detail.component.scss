@@ -5,44 +5,65 @@
 }
 
 .search-container {
+  margin-bottom: 4rem;
+  
   ::ng-deep .search-container {
-    padding-top: 0;
+    padding: 0;
   }
 }
 
 .poem-content {
-  padding: 2rem 0;
+  padding: 0;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .poem-title {
-  font-size: 2rem;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.87);
-  margin: 0 0 0.5rem;
-  line-height: 1.2;
+  font-family: "Neue Haas Grotesk", sans-serif;
+  font-size: 2.75rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin: 0 0 1rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .poem-author {
-  font-size: 1.25rem;
+  font-family: "Neue Haas Grotesk", sans-serif;
+  font-size: 1.375rem;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.6);
-  margin: 0 0 2rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: 0 0 4rem;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
 }
 
 .poem-lines {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.87);
-  margin-bottom: 2rem;
-}
+  font-family: "Tiempos", serif;
+  font-size: 1.375rem;
+  line-height: 1.85;
+  color: var(--text-primary);
+  margin: 0 auto 4rem;
+  padding: 0;
+  max-width: 38em;
 
-.poem-line {
-  margin: 0;
-  padding: 0.25rem 0;
-  white-space: pre-wrap;
+  .poem-line {
+    margin: 0;
+    padding: 0.35rem 0;
+    white-space: pre-wrap;
 
-  &.empty-line {
-    height: 1rem;
+    &.empty-line {
+      height: 1.85rem;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -50,50 +71,78 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 2rem 0;
+  gap: 1.5rem;
+  padding: 5rem 0;
 
   p {
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-size: 1.125rem;
     margin: 0;
+    font-family: "Neue Haas Grotesk", sans-serif;
+    letter-spacing: -0.01em;
   }
 }
 
 .error-message {
   text-align: center;
-  color: #f44336;
-  font-size: 1.1rem;
-  margin-top: 2rem;
+  color: #d32f2f;
+  font-size: 1.125rem;
+  margin-top: 3rem;
+  font-family: "Neue Haas Grotesk", sans-serif;
+  letter-spacing: -0.01em;
 }
 
 @media (max-width: 600px) {
   .poem-detail-container {
-    padding: 1rem 0.5rem;
+    padding: 0 0.75rem;
+  }
+
+  .search-container {
+    margin-bottom: 3rem;
   }
 
   .poem-content {
-    padding: 0.5rem 0;
+    padding: 0;
   }
 
   .poem-title {
-    font-size: 1.5rem;
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
   }
 
   .poem-author {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
   }
 
   .poem-lines {
-    font-size: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+    max-width: 34em;
+
+    .poem-line {
+      padding: 0.3rem 0;
+
+      &.empty-line {
+        height: 1.75rem;
+      }
+    }
   }
 
   .loading-container {
-    padding: 1.5rem 0;
+    padding: 3.5rem 0;
+    gap: 1.25rem;
     
     p {
       font-size: 1rem;
     }
+  }
+
+  .error-message {
+    font-size: 1rem;
+    margin-top: 2.5rem;
   }
 } 

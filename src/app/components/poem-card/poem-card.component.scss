@@ -9,11 +9,21 @@
   mat-card-header {
     margin-bottom: 1rem;
 
+    mat-card-title {
+      font-family: "Neue Haas Grotesk", sans-serif;
+      font-weight: 400;
+      color: var(--text-primary);
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+      font-size: 1.5rem;
+    }
+
     mat-card-subtitle {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-top: 0.5rem;
+      color: var(--text-secondary);
 
       .author {
         font-style: italic;
@@ -55,10 +65,11 @@
     margin: 1rem 0;
     
     .poem-lines {
-      font-family: 'Georgia', serif;
+      font-family: "Tiempos", serif;
       line-height: 1.6;
       white-space: pre-line;
       margin-bottom: 1rem;
+      color: var(--text-primary);
       
       p {
         margin: 0;
@@ -73,7 +84,7 @@
   
   .poem-info {
     margin-top: 1rem;
-      color: rgba(0, 0, 0, 0.6);
+    color: var(--text-secondary);
     font-size: 0.9rem;
 
     .line-count {

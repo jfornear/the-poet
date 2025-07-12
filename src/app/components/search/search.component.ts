@@ -1,18 +1,19 @@
 import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatOptionModule } from '@angular/material/core';
 import { MatRippleModule } from '@angular/material/core';
-import { Router } from '@angular/router';
-import { PoetrySearchService } from '../../services/poetry-search.service';
-import { Subject, Observable, of, BehaviorSubject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap, takeUntil, map, catchError, tap, finalize } from 'rxjs/operators';
+import { BehaviorSubject, Subject, of } from 'rxjs';
+import { takeUntil, debounceTime, distinctUntilChanged, tap, switchMap, catchError, finalize } from 'rxjs/operators';
 import { Poem } from '../../models/poetry.models';
+import { PoetrySearchService } from '../../services/poetry-search.service';
 import { PoetryStorageService } from '../../services/poetry-storage.service';
 
 @Component({
@@ -29,6 +30,7 @@ import { PoetryStorageService } from '../../services/poetry-storage.service';
     MatButtonModule,
     MatProgressSpinnerModule,
     MatAutocompleteModule,
+    MatOptionModule,
     MatRippleModule
   ]
 })

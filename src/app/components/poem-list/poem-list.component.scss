@@ -4,9 +4,26 @@
   padding: 0 1rem;
 }
 
+::ng-deep {
+  .mat-expansion-panel-header-title {
+    font-family: "Neue Haas Grotesk", sans-serif;
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+
+  .mat-expansion-panel-header-description {
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+}
+
 .poem-content {
   margin: 1rem 0;
   white-space: pre-line;
+  font-family: "Tiempos", serif;
+  color: var(--text-primary);
 }
 
 .empty-line {
@@ -15,12 +32,13 @@
 
 .poem-footer {
   margin-top: 1rem;
-  color: rgba(0, 0, 0, 0.54);
+  color: var(--text-secondary);
 }
 
 .no-results {
   text-align: center;
   margin: 2rem 0;
+  color: var(--text-secondary);
 }
 
 @media (max-width: 600px) {
