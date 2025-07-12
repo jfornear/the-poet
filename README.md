@@ -138,10 +138,6 @@ src/
 
 See [Setup Guide](src/docs/setup.md#common-issues) for solutions to common problems.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - [PoetryDB](https://poetrydb.org/) for providing the poetry API
