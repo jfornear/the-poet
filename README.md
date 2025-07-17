@@ -13,6 +13,10 @@ A modern poetry exploration application built with Angular 19, featuring server-
 - Real-time search suggestions
 - Direct poem URL sharing
 
+<img width="1239" height="1233" alt="Screenshot 2025-07-11 at 9 20 00 PM" src="https://github.com/user-attachments/assets/f4447822-ffc2-4207-8978-19da00634946" />
+<img width="1239" height="1233" alt="Screenshot 2025-07-11 at 9 20 03 PM" src="https://github.com/user-attachments/assets/61d64526-36a2-4094-b96f-e3d182b5f565" />
+
+
 ## Getting Started
 
 ### Prerequisites
